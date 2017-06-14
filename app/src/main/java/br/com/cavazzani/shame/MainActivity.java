@@ -69,4 +69,19 @@ public class MainActivity extends AppCompatActivity implements SensorListener {
     public void onAccuracyChanged(int sensor, int accuracy) {
 
     }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        sensorMgr.unregisterListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        sensorMgr.registerListener(this,
+                SensorManager.SENSOR_ACCELEROMETER,
+                SensorManager.SENSOR_DELAY_GAME);
+        super.onResume();
+    }
 }

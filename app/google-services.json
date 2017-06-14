@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "334005834215",
+    "firebase_url": "https://shame-70331.firebaseio.com",
+    "project_id": "shame-70331",
+    "storage_bucket": "shame-70331.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334005834215:android:8b43c1841ea231c2",
+        "android_client_info": {
+          "package_name": "br.com.cavazzani.shame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334005834215-5jj9dbechg2l5s02jlq8nt8gm0liihjh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2f4sd_6GS7Py9bJpc1BXHaE7OC9DqSjg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements SensorListener {
         mInterstitialAd.setAdUnitId("ca-app-pub-6320804272422104/1047869673");
 
         mInterstitialAd.loadAd(new AdRequest.Builder()
-                .addTestDevice("563A4676316BB8D8B19D8B683B1C1AEC")
+       //         .addTestDevice("563A4676316BB8D8B19D8B683B1C1AEC")
                 .build());
 
 

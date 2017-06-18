@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements SensorListener {
     private SensorManager sensorMgr;
     private static final int SHAKE_THRESHOLD = 800;
     private long lastUpdate; private float x; private float y; private float z; private float last_x; private float last_z; private float last_y;
+    private int time = 0;
     MediaPlayer mp;
     private InterstitialAd mInterstitialAd;
 
@@ -32,14 +33,13 @@ public class MainActivity extends AppCompatActivity implements SensorListener {
         ImageButton one = (ImageButton) this.findViewById(R.id.shame);
         sensorMgr = (SensorManager) getSystemService(SENSOR_SERVICE);
 
-        MobileAds.initialize(this, "ca-app-pub-6320804272422104~7094403275");
+        MobileAds.initialize(this,"ca-app-pub-6320804272422104~7094403275");
 
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-6320804272422104/1047869673");
-
         mInterstitialAd.loadAd(new AdRequest.Builder()
-       //         .addTestDevice("563A4676316BB8D8B19D8B683B1C1AEC")
+                .addTestDevice("563A4676316BB8D8B19D8B683B1C1AEC")
                 .build());
 
 
@@ -74,11 +74,15 @@ public class MainActivity extends AppCompatActivity implements SensorListener {
                 if (speed > SHAKE_THRESHOLD) {
                     Log.d("sensor", "shake detected w/ speed: " + speed);
                     mp.start();
-                    if (mInterstitialAd.isLoaded()) {
-                        mInterstitialAd.show();
-                    } else {
-                        Log.d("TAG", "The interstitial wasn't loaded yet.");
+                    time++;
+                    if(time>=4){
+                        if (mInterstitialAd.isLoaded()) {
+                            mInterstitialAd.show();
+                        } else {
+                            Log.d("TAG", "The interstitial wasn't loaded yet.");
+                        }
                     }
+
                 }
                 last_x = x;
                 last_y = y;
